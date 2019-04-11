@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ImageTest"/>
+        <activity android:name=".ProgressBarTest"/>
     </application>
 
 </manifest>
