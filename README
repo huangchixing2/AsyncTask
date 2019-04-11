@@ -1,0 +1,11 @@
+为什么要异步任务？android单线程模型耗时操作放在非主线程中执行asyncTask为何而生？
+子线程中更新UI封装、简化异步操作构建asynctask子类参数asynctask<params,progress,result>是一个抽象类，通常用于被继承，
+
+继承asynctask需要指定如下三个泛型参数;params:启动任务时输入参数的类型progress:后台任务执行中返回进度值得类型result:后台执行任务完成后返回结果的类型
+构建asynctask子类的回调方法doinbackground:必须重写，异步执行后台线程将要完成的任务
+
+onpreExecute:执行后台耗时操作前被调用，通常用户完成一些初始化操作onPostExecute:
+
+当doinbackgound方法完成后，系统会自动调用onPostExecute（）方法病将
+
+doinbackground方法返回的值传给该方法onprogressUpdate:在doinbackground（）方法中调用publishprogress()方法更新任务的执行进度后，就会触发该方法
