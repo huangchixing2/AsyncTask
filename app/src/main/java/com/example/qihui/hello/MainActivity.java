@@ -1,7 +1,9 @@
 package com.example.qihui.hello;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,5 +15,9 @@ public class MainActivity extends AppCompatActivity {
         MyAsyncTask task = new MyAsyncTask();
         task.execute(); //启动
 
+    }
+
+    public void loadImage(View view){
+        startActivity(new Intent(this, ImageTest.class));
     }
 }
